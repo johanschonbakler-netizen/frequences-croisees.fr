@@ -1,0 +1,124 @@
+---
+export const prerender = true;
+
+import '../styles/global.css';
+
+const siteUrl = 'https://frequences-croisees.fr';
+const title = 'Fréquences Croisées — Musiciens amateurs à Précy-sur-Oise';
+const description = 'Fréquences Croisées rassemble les musiciens amateurs de Précy-sur-Oise et des communes voisines pour jouer, partager et créer ensemble.';
+
+const activities = [
+  ['Jam sessions', 'Improviser et jouer librement, sans pression et dans tous les styles.'],
+  ['Répétitions', 'Travailler des morceaux et construire des répertoires communs.'],
+  ['Échanges', 'Partager ses connaissances, découvrir d’autres univers et progresser ensemble.'],
+  ['Création', 'Faire naître des collaborations et de nouveaux projets musicaux.']
+];
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#102c2a" />
+    <link rel="canonical" href={`${siteUrl}/`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={`${siteUrl}/`} />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Fréquences Croisées',
+      url: siteUrl,
+      description
+    })} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Fréquences Croisées, accueil">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Fréquences<br /><em>Croisées</em></span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <a href="#rencontres">Les rencontres</a>
+        <a href="#village">Dans le village</a>
+        <a class="nav-cta" href="#participer">Nous rejoindre</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Précy-sur-Oise & communes voisines</p>
+          <h1 id="hero-title">Un lieu de rencontre<br />pour les <span>musiciens.</span></h1>
+          <p class="hero-lead">Jouer ensemble, se rencontrer, partager ses influences et faire vivre la musique à Précy-sur-Oise.</p>
+          <a class="button" href="#participer">Découvrir l’association <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="disc"><span>FC</span></div>
+          <div class="wave wave-one"></div><div class="wave wave-two"></div><div class="wave wave-three"></div>
+          <p>À plusieurs,<br />la musique résonne<br /><strong>autrement.</strong></p>
+        </div>
+      </section>
+
+      <section class="intro" id="association" aria-labelledby="intro-title">
+        <p class="section-number" aria-hidden="true">01</p>
+        <div>
+          <p class="eyebrow">L’association</p>
+          <h2 id="intro-title">Tous les niveaux.<br />Tous les univers.</h2>
+        </div>
+        <div class="intro-text">
+          <p>Fréquences Croisées rassemble les musiciens amateurs de Précy-sur-Oise et des communes voisines, quels que soient leur âge, leur niveau ou leur univers musical.</p>
+          <p>Notre envie est simple : favoriser la pratique musicale collective, les rencontres et le partage, dans un esprit convivial et ouvert à toutes et tous.</p>
+        </div>
+      </section>
+
+      <section class="meetings" id="rencontres" aria-labelledby="meetings-title">
+        <div class="meetings-heading">
+          <p class="eyebrow">1 à 2 rendez-vous par semaine</p>
+          <h2 id="meetings-title">Des rencontres<br />pour jouer <em>vraiment.</em></h2>
+        </div>
+        <div class="activity-grid">
+          {activities.map(([name, text], index) => (
+            <article class="activity-card">
+              <span class="activity-index" aria-hidden="true">0{index + 1}</span>
+              <h3>{name}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <p class="equipment-note">Chacun vient avec ses instruments et équipements. Du matériel collectif viendra compléter progressivement les rencontres.</p>
+      </section>
+
+      <section class="local" id="village" aria-labelledby="local-title">
+        <div class="local-art" aria-hidden="true"><span>♪</span><span>♩</span><span>♫</span></div>
+        <div class="local-copy">
+          <p class="eyebrow">Précy-sur-Oise en musique</p>
+          <h2 id="local-title">Faire vivre la musique<br />dans le village.</h2>
+          <p>Au-delà des rencontres régulières, Fréquences Croisées souhaite participer à la vie culturelle locale et créer du lien entre les habitants.</p>
+          <ul>
+            <li>Participer à la Fête de la musique et aux manifestations communales.</li>
+            <li>Organiser des concerts, scènes ouvertes et rencontres musicales.</li>
+            <li>Collaborer avec les associations et acteurs culturels locaux.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="join" id="participer" aria-labelledby="join-title">
+        <p class="eyebrow">Envie de jouer avec nous ?</p>
+        <h2 id="join-title">La première note<br />est la vôtre.</h2>
+        <p>Le projet est en cours de création. Les informations pratiques pour participer aux premières rencontres seront bientôt publiées ici.</p>
+        <a class="button button-light" href="#association">Suivre le projet <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="/" aria-label="Fréquences Croisées, accueil"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Fréquences<br /><em>Croisées</em></span></a>
+      <p>Association musicale à Précy-sur-Oise</p>
+      <p>© {new Date().getFullYear()} Fréquences Croisées</p>
+    </footer>
+  </body>
+</html>
