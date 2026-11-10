@@ -1,0 +1,15 @@
+---
+const { home = false } = Astro.props;
+const anchor = (id: string) => `${home ? '' : '/'}#${id}`;
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Fréquences Croisées, accueil">
+    <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span>Fréquences<br /><em>Croisées</em></span>
+  </a>
+  <nav aria-label="Navigation principale">
+    <a href={anchor('rencontres')}>Les sessions croisées hebdos</a>
+    <a href={anchor('village')}>Évènements</a>
+    <a class="nav-cta" href={anchor('participer')}>Rejoignez-nous</a>
+  </nav>
+</header>

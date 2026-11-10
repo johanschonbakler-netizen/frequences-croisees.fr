@@ -1,0 +1,24 @@
+---
+// Ancien visuel du hero, conservé pour pouvoir le réactiver.
+// Remplacer l’import et l’appel de HeroMap par HeroPlanet dans index.astro.
+---
+<div class="hero-visual" aria-hidden="true">
+  <div class="disc"><span>FC</span></div>
+  <div class="wave wave-one"></div><div class="wave wave-two"></div><div class="wave wave-three"></div>
+  <p>À plusieurs,<br />la musique résonne<br /><strong>autrement.</strong></p>
+</div>
+
+<style>
+  .hero-visual { position:relative; min-height:370px; display:flex; align-items:center; justify-content:center; }
+  .disc { width:min(29vw,350px); aspect-ratio:1; border-radius:50%; background:repeating-radial-gradient(circle at center,#102c2a 0 1px,#1b4540 2px 5px); position:relative; z-index:2; box-shadow:0 0 0 20px #edbb3c,0 0 0 42px var(--orange); display:grid; place-items:center; color:var(--cream); }
+  .disc:before { content:''; width:30%; aspect-ratio:1; border-radius:50%; background:var(--orange); border:7px solid #edbb3c; }
+  .disc span { position:absolute; font:700 clamp(24px,3vw,45px) 'Playfair Display',serif; transform:rotate(-25deg); }
+  .wave { position:absolute; border:1px solid var(--ink); opacity:.4; border-radius:50%; transform:rotate(-27deg); }
+  .wave-one { width:570px; height:100px; }
+  .wave-two { width:650px; height:170px; }
+  .wave-three { width:735px; height:255px; }
+  .hero-visual p { position:absolute; bottom:0; right:0; font:600 14px/1.2 'DM Mono',monospace; z-index:4; transform:rotate(-4deg); }
+  .hero-visual strong { color:var(--orange); }
+  @media(max-width:800px) { .hero-visual { min-height:320px; } .disc { width:230px; } }
+  @media(max-width:480px) { .hero-visual p { font-size:11px; } }
+</style>

@@ -1,0 +1,87 @@
+---
+export const prerender = true;
+
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Analytics from '../components/Analytics.astro';
+
+const title = 'Mentions légales et confidentialité — Fréquences Croisées';
+const description = 'Informations légales, protection des données personnelles et mesure d’audience du site Fréquences Croisées Précy-sur-Oise.';
+const url = 'https://frequences-croisees.fr/mentions-legales-confidentialite/';
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#102c2a" />
+    <link rel="canonical" href={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <title>{title}</title>
+    <Analytics />
+  </head>
+  <body>
+    <SiteHeader />
+    <main class="legal-page">
+      <p class="eyebrow">Fréquences Croisées</p>
+      <h1>Mentions légales<br />et confidentialité</h1>
+
+      <section aria-labelledby="editor-title">
+        <h2 id="editor-title">Éditeur du site</h2>
+        <p>Le site <a href="/">frequences-croisees.fr</a> est édité par <strong>Fréquences Croisées Précy-sur-Oise</strong>, association régie par la loi du 1er juillet 1901 et le décret du 16 août 1901.</p>
+        <address>
+          Siège social : 53 rue Charles de Gaulle, 60460 Précy-sur-Oise, France.<br />
+          E-mail : <a href="mailto:contact@frequences-croisees.fr">contact@frequences-croisees.fr</a><br />
+          Téléphone : <a href="tel:+33678155326">06 78 15 53 26</a>
+        </address>
+        <p>Directeur de publication : <strong>Johan Schonbakler</strong>, président de l’association.</p>
+      </section>
+
+      <section aria-labelledby="hosting-title">
+        <h2 id="hosting-title">Hébergement</h2>
+        <p>Le site est hébergé par <strong>OVH SAS</strong>, 2 rue Kellermann, 59100 Roubaix, France.</p>
+        <p>Site de l’hébergeur : <a href="https://www.ovhcloud.com/fr/">www.ovhcloud.com</a>.</p>
+      </section>
+
+      <section aria-labelledby="content-title">
+        <h2 id="content-title">Contenus et crédits</h2>
+        <p>Pour toute demande de réutilisation des textes ou de l’identité visuelle du site, contactez l’association. Les éléments de tiers restent soumis à leurs licences respectives.</p>
+        <p>Les icônes proviennent de <a href="https://lucide.dev/">Lucide</a> et sont utilisées sous <a href="/licenses/lucide.txt">licence ISC</a>.</p>
+      </section>
+
+      <section aria-labelledby="privacy-title">
+        <h2 id="privacy-title">Données personnelles et contact</h2>
+        <p>L’association Fréquences Croisées Précy-sur-Oise est responsable des traitements liés à ce site. Vous pouvez la contacter aux coordonnées indiquées ci-dessus.</p>
+        <p>Le site ne propose ni compte utilisateur ni formulaire d’inscription. Si vous nous contactez par e-mail ou téléphone, vous nous communiquez les informations nécessaires pour vous répondre : vos coordonnées et le contenu de votre demande.</p>
+        <p>Ces informations servent à répondre à vos questions et à organiser votre participation aux activités de l’association. Le traitement des demandes de renseignements repose sur l’intérêt légitime de l’association à échanger avec les personnes intéressées par ses activités.</p>
+        <p>Elles sont destinées aux personnes de l’association chargées de votre demande et aux prestataires techniques nécessaires à ces échanges. Elles sont conservées pendant le temps nécessaire au suivi de la demande, sous réserve des obligations légales applicables.</p>
+      </section>
+
+      <section aria-labelledby="analytics-title">
+        <h2 id="analytics-title">Mesure d’audience</h2>
+        <p>Ce site utilise <strong>Umami</strong>, via le domaine <strong>umami.jschonbakler.fr</strong>, pour comprendre sa fréquentation et améliorer les informations proposées.</p>
+        <p>Le suivi porte notamment sur les pages consultées, le site de provenance, le navigateur, le système d’exploitation, le type d’appareil et une localisation approximative. La réception des requêtes implique également le traitement de données techniques de connexion.</p>
+        <p>Selon sa documentation, le traceur web Umami n’utilise pas de cookies. Cela ne constitue pas, à lui seul, une garantie d’exemption de consentement : les conditions applicables dépendent de la configuration et de l’usage du service.</p>
+        <p>La durée de conservation des statistiques dépend des paramètres de l’instance Umami. Pour obtenir des précisions sur cette conservation ou sur les modalités d’opposition, contactez <a href="mailto:contact@frequences-croisees.fr">contact@frequences-croisees.fr</a>.</p>
+      </section>
+
+      <section aria-labelledby="fonts-title">
+        <h2 id="fonts-title">Polices de caractères</h2>
+        <p>Les polices DM Sans, DM Mono et Playfair Display sont chargées depuis Google Fonts. Votre navigateur contacte les serveurs de Google pour les télécharger et leur transmet des données techniques, notamment votre adresse IP. Consultez la <a href="https://policies.google.com/privacy?hl=fr">politique de confidentialité de Google</a> pour en savoir plus.</p>
+      </section>
+
+      <section aria-labelledby="rights-title">
+        <h2 id="rights-title">Vos droits</h2>
+        <p>Selon les conditions prévues par la réglementation, vous disposez de droits d’accès, de rectification, d’effacement, de limitation, d’opposition et, lorsque cela s’applique, de portabilité de vos données.</p>
+        <p>Pour exercer vos droits, écrivez à <a href="mailto:contact@frequences-croisees.fr">contact@frequences-croisees.fr</a> en précisant votre demande. Vous pouvez également adresser une réclamation à la <a href="https://www.cnil.fr/fr/plaintes">CNIL</a>.</p>
+      </section>
+    </main>
+    <SiteFooter />
+  </body>
+</html>

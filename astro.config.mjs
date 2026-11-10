@@ -7,5 +7,10 @@ export default defineConfig({
   output: 'server',
   adapter: node({ mode: 'standalone' }),
   integrations: [sitemap()],
-  trailingSlash: 'always'
+  trailingSlash: 'always',
+  vite: {
+    server: {
+      allowedHosts: ['frequences-croisees.dev.jschonbakler.fr']
+    }
+  }
 });
